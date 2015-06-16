@@ -33,7 +33,6 @@
               <include name="struts2-core-2.1.8.jar"/>                
               <include name="struts2-spring-plugin-2.1.8.jar"/>                
               <include name="xwork-core-2.1.6.jar"/>                
-
           </fileset>  
           <fileset dir="${prjlib.dir}/servletapi-2.3">  
               <include name="servletapi-2.3.jar"/>  
