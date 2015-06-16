@@ -23,6 +23,16 @@
               <include name="hibernate3.jar"/>               
               <include name="hibernate-annotations.jar"/>                
               <include name="hibernate-commons-annotations.jar"/>                
+              <include name="ibatis-2.3.4.726.jar"/>                
+              <include name="javassist-3.9.0.GA.jar"/>                
+              <include name="jaxen-1.1-beta-7.jar"/>                
+              <include name="jta-1.1.jar"/>                
+              <include name="ognl-2.7.3.jar"/>                
+              <include name="oscache-2.3.1.jar"/>                
+              <include name="slf4j-api-1.5.10.jar"/>                
+              <include name="struts2-core-2.1.8.jar"/>                
+              <include name="struts2-spring-plugin-2.1.8.jar"/>                
+              <include name="xwork-core-2.1.6.jar"/>                
 
           </fileset>  
           <fileset dir="${prjlib.dir}/servletapi-2.3">  
