@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. -->
+
+<project basedir="." default="build" name="spart">
+    <property environment="env"/>
+    <property name="ECLIPSE_HOME" value="../../eclipse"/>
+    <property name="spart.location" value="."/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.6"/>
+    <property name="source" value="1.6"/>
+ 
+    <path id="spart.classpath">
+        <pathelement location="WebRoot/WEB-INF/classes"/>
+		<pathelement location="WebRoot/WEB-INF/lib/commons-lang3-3.3.2.jar"/> 
+    </path>
+    <target name="init">
+        <mkdir dir="war/WEB-INF/classes"/>
+        <mkdir dir="test-classes"/>
+        <copy includeemptydirs="false" todir="war/WEB-INF/classes">
+            <fileset dir="src">
+                <exclude name="**/*.launch"/>
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+        <copy includeemptydirs="false" todir="test-classes">
+            <fileset dir="test">
+                <exclude name="**/*.launch"/>
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="war/WEB-INF/classes"/>
+        <delete dir="test-classes"/>
+    </target>
+    <target depends="clean" name="cleanall">
+        <ant antfile="${Regent.core.location}/build.xml" dir="${Regent.core.location}" inheritAll="false" target="clean"/>
+    	<ant antfile="${Report.core.location}/build.xml" dir="${Report.core.location}" inheritAll="false" target="clean"/>
+    </target>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects">
+        <ant antfile="${Regent.core.location}/build.xml" dir="${Regent.core.location}" inheritAll="false" target="build-project">
+            <propertyset>
+                <propertyref name="build.compiler"/>
+            </propertyset>
+        </ant>
+    	 <ant antfile="${Report.core.location}/build.xml" dir="${Report.core.location}" inheritAll="false" target="build-project">
+    	            <propertyset>
+    	                <propertyref name="build.compiler"/>
+    	            </propertyset>
+    	  </ant>
+    </target>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac encoding="utf-8" debug="true" debuglevel="${debuglevel}" destdir="war/WEB-INF/classes" source="${source}" target="${target}" includeantruntime="on">
+            <src path="src"/>
+            <classpath refid="Regent.Gwt.classpath"/>
+        </javac>
+        <javac encoding="utf-8" debug="true" debuglevel="${debuglevel}" destdir="test-classes" source="${source}" target="${target}" includeantruntime="on">
+            <src path="test"/>
+            <classpath refid="Regent.Gwt.classpath"/>
+        </javac>
+    	
+        <delete dir="temp"/>
+        <delete dir="bin"/>
+        <mkdir dir="temp"/>
+        <mkdir dir="bin"/>
+        <copy includeemptydirs="true" todir="temp">
+            <fileset dir="src">
+            </fileset>
+        </copy>
+        <copy includeemptydirs="true" todir="temp">
+            <fileset dir="war/WEB-INF/classes">
+            </fileset>
+        </copy>
+      <jar destfile="bin/regent.gwt.jar"
+         basedir="temp"
+         includes="**/*.*" 
+       />
+       <delete dir="temp"/>
+    	
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects">
+        <ant antfile="${Regent.location}/build.xml" dir="${Regent.location}" inheritAll="false" target="clean"/>
+        <ant antfile="${Regent.location}/build.xml" dir="${Regent.location}" inheritAll="false" target="build">
+            <propertyset>
+                <propertyref name="build.compiler"/>
+            </propertyset>
+        </ant>
+    </target>
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>
+    <target name="jar" depends="build">
+        <delete dir="temp"/>
+        <delete dir="bin"/>
+        <mkdir dir="temp"/>
+        <mkdir dir="bin"/>
+        <copy includeemptydirs="true" todir="temp">
+            <fileset dir="src">
+            </fileset>
+        </copy>
+        <copy includeemptydirs="true" todir="temp">
+            <fileset dir="war/WEB-INF/classes">
+            </fileset>
+        </copy>
+      <jar destfile="bin/Regent.gwt.jar"
+         basedir="temp"
+         includes="**/*.*" 
+       />
+       <delete dir="temp"/>
+  </target>
+</project>

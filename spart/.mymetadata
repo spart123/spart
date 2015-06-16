@@ -3,9 +3,10 @@
   type="WEB"
   name="codeFactory"
   id="myeclipse.1367480871281"
-  context-root="/codeFactory"
+  context-root="/spart"
   j2ee-spec="5.0"
   archive="codeFactory.war">
+  archive="spart.war">
   <attributes>
     <attribute name="webrootdir" value="WebRoot" />
   </attributes>
