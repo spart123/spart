@@ -1,4 +1,4 @@
-﻿package com.common.datatype;
+package com.common.datatype;
 
 public class FullTextSearchType {
 	private String strBt;

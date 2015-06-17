@@ -1,5 +1,4 @@
-﻿package com.common.tool;
-
+package com.common.tool;
 import com.common.constants.Constants;
 import com.opensymphony.xwork2.ActionContext;
 

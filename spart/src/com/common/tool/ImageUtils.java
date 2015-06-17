@@ -1,4 +1,4 @@
-﻿package com.common.tool;
+package com.common.tool;
 
 import java.awt.Graphics2D;
 import java.awt.Rectangle;

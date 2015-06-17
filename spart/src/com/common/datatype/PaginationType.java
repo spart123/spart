@@ -1,4 +1,4 @@
-﻿package com.common.datatype;
+package com.common.datatype;
 
 import java.util.HashMap;
 import java.util.List;

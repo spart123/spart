@@ -1,4 +1,4 @@
-﻿package com.common.tool;
+package com.common.tool;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;

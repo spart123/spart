@@ -1,4 +1,4 @@
-﻿package com.common.tool;
+package com.common.tool;
 
 import org.apache.struts2.ServletActionContext;
 import org.springframework.context.annotation.Scope;

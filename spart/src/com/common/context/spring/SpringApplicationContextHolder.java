@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class SpringApplicationContextHolder implements ApplicationContextAware {
 
-	private static ApplicationContext applicationContext; // Spring搴旂敤涓婁笅鏂囩幆澧�
+	private static ApplicationContext applicationContext; 
 
 	protected static Log logger = LogFactory
 			.getLog(SpringApplicationContextHolder.class);

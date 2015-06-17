@@ -1,4 +1,4 @@
-﻿package com.common.datatype;
+package com.common.datatype;
 
 /**
  * 发送邮件需要使用的基本信息

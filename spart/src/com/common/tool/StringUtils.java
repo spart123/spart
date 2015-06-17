@@ -1,4 +1,4 @@
-﻿package com.common.tool;
+package com.common.tool;
 
 import java.io.UnsupportedEncodingException;
 import java.math.BigDecimal;

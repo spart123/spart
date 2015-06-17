@@ -1,4 +1,4 @@
-﻿package com.common.tool;
+package com.common.tool;
 
 public class StrongException extends RuntimeException {
 
