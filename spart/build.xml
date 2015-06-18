@@ -55,6 +55,10 @@
               <include name="spring-tx-3.2.0.M1.jar"/>                
               <include name="commons-lang3-3.3.2.jar"/>                
               <include name="spring-beans-3.2.0.M1.jar"/>                
+              <include name="spring-web-3.2.0.M1.jar"/>                
+              <include name="commons-io-1.4.jar"/>                
+              <include name="commons-fileupload-1.2.1.jar"/>                
+              <include name="commons-lang-2.4.jar"/>                
           </fileset>  
           <fileset dir="${prjlib.dir}/servletapi-2.3">  
               <include name="servletapi-2.3.jar"/>  
