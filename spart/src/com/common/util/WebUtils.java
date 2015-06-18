@@ -16,8 +16,6 @@ public class WebUtils extends org.springframework.web.util.WebUtils {
 	private static Log logger = LogFactory.getLog(WebUtils.class);
 
 	/**
-	 * 判断是否是异步的请求、AJAX请求
-	 * 
 	 * @param request
 	 * @return boolean
 	 */
@@ -34,7 +32,7 @@ public class WebUtils extends org.springframework.web.util.WebUtils {
 		try {
 			HttpServletResponse response = SpringDispatcherContextHolder
 					.getResponse();
-			response.setCharacterEncoding("utf-8");
+		    //response.setCharacterEncoding("utf-8");
 			PrintWriter out = response.getWriter();
 			out.write(text);
 			out.close();

@@ -35,7 +35,7 @@ import org.springframework.web.multipart.support.AbstractMultipartHttpServletReq
  * @see CosMultipartResolver
  * @see com.CosMultipartRequest.servlet.MultipartRequest
  */
-public class CosMultipartHttpServletRequest extends
+public class CosMultipartHttpServletRequest  extends
 		AbstractMultipartHttpServletRequest {
 
 	protected static final Logger logger = LoggerFactory
@@ -104,6 +104,14 @@ public class CosMultipartHttpServletRequest extends
 		}
 		return Collections.unmodifiableMap(params);
 	}
+
+    public HttpHeaders getMultipartHeaders(String aa){
+       return null;
+    }
+
+    public String getMultipartContentType(String aa){
+       return null;
+    }
 
 	/**
 	 * Implementation of Spring's MultipartFile interface on top of a COS

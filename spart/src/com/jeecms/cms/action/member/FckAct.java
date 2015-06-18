@@ -180,7 +180,7 @@ public class FckAct {
 	}
 
 	private void responseInit(HttpServletResponse response) {
-		response.setCharacterEncoding("UTF-8");
+		//response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html");
 		response.setHeader("Cache-Control", "no-cache");
 	}
