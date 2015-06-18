@@ -1,7 +1,6 @@
 package com.jeecms.cms.test;
 
 import org.apache.log4j.Logger;
-import org.apache.log4j.PropertyConfigurator;
 
 public class TestLog4j {
 
@@ -12,8 +11,6 @@ public class TestLog4j {
 	public static void main(String[] args) {
 		
 		// TODO Auto-generated method stub
-		
-		PropertyConfigurator.configure("E:/workspace/codeFactory/src/log4j.properties ");
 		
 		Logger logger = Logger.getLogger(TestLog4j.class);
 		

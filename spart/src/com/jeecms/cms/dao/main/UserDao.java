@@ -3,11 +3,11 @@ package com.jeecms.cms.dao.main;
 import java.util.List;
 import java.util.Map;
 
-import org.mybatis.spring.annotation.Mapper;
+//import org.mybatis.spring.annotation.Mapper;
 
 import com.jeecms.cms.entity.main.User;
 
-@Mapper("userDao")
+//@Mapper("userDao")
 public interface UserDao {
 
 	public int insert(User user);  //这个与xml里面的 id是一致的
